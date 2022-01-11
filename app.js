@@ -1,26 +1,23 @@
 
 
-let aotForm = document.querySelector('#form-area-of-triangle');
-let aotDisp = document.querySelector('#aot-disp');
+const aotForm = document.querySelector('#form-area-of-triangle');
+const aotDisp = document.querySelector('#aot-disp');
 
-let side1 = document.querySelector('#aot-side-1');
-let side2 = document.querySelector('#aot-side-2');
-let side3 = document.querySelector('#aot-side-3');
+const side1 = document.querySelector('#aot-side-1');
+const side2 = document.querySelector('#aot-side-2');
+const side3 = document.querySelector('#aot-side-3');
 
-function aotOnSubmitHandler(e) {
+const aotOnSubmitHandler = e => {
     e.preventDefault();
 
-    inP = parseInt(side1.value);
-    qty = parseInt(side2.value);
-    cuP = parseInt(side3.value);
+    const inP = parseInt(side1.value);
+    const qty = parseInt(side2.value);
+    const cuP = parseInt(side3.value);
 
-    profit = (cuP - inP) * qty;
-    profitPer = ((cuP - inP) / inP) * 100;
+    const profit = (cuP - inP) * qty;
+    const profitPer = ((cuP - inP) / inP) * 100;
 
-    let pnl = "Profit";
-    if(profit < 0) {
-        pnl = "Loss"
-    }
+    const pnl = profit < 0 ? "Loss" : "Profit";
     
     aotDisp.innerHTML = "Your net " + pnl + " is " + profit + " and the percentage is " + profitPer + "%";
 }
